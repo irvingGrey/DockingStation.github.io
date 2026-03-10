@@ -15,7 +15,18 @@ body {
     margin: 0;
     padding-top: 80px;
 }
-
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000; /* Solid black to mask content scrolling under */
+    border-bottom: 1px solid var(--emerald);
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    z-index: 1000;
+}
 /* Navigation Bar */
 nav {
     position: fixed;
@@ -101,6 +112,12 @@ code {
 
 .copy-btn:hover {
     background-color: #fff;
+}
+
+.nav-link.active {
+    border-bottom: 2px solid var(--emerald);
+    padding-bottom: 5px;
+    opacity: 1;
 }
 
 h1, h2 { text-align: center; text-transform: uppercase; letter-spacing: 2px; }
