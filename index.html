@@ -10,6 +10,9 @@
             --emerald: #50C878;
             --border-style: 1px solid #50C878;
             --font-stack: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            
+            /* ADDED: Global Rounding Variable */
+            --radius-main: 10px;
         }
 
         body {
@@ -26,7 +29,6 @@
             border-bottom: 2px solid var(--emerald);
         }
 
-        /* Grid Layout Configuration */
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -38,11 +40,23 @@
         .card {
             border: var(--border-style);
             padding: 20px;
-            transition: background 0.3s ease;
+            
+            /* ADDED: Applies the rounded corner */
+            border-radius: var(--radius-main);
+            
+            /* Transitions for the hover effect below */
+            transition: all 0.3s ease;
         }
 
         .card:hover {
-            background-color: rgba(80, 200, 120, 0.1);
+            /* Modified hover effect for rounded corners */
+            background-color: rgba(80, 200, 120, 0.05);
+            
+            /* Subtle shadow to complement the rounding */
+            box-shadow: 0 4px 15px rgba(80, 200, 120, 0.2);
+            
+            /* Optional: Make the corner rounding slightly stronger on hover */
+            border-radius: calc(var(--radius-main) * 1.5);
         }
 
         .card h2 {
