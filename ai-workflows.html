@@ -49,6 +49,26 @@
                 <li><a href="#">Markdown Export Specs</a></li>
             </ul>
         </div>
+        <div class="card">
+    <h2>Gemini Strategic Prompt</h2>
+    <div class="prompt-box">
+        <code id="strategic-prompt">
+            Act as a Strategic Management Consultant. Review the following research 
+            proposal for logical fallacies and University compliance...
+        </code>
+        <button class="copy-btn" onclick="copyPrompt('strategic-prompt')">Copy Prompt</button>
+    </div>
+</div>
+
+<script>
+    function copyPrompt(id) {
+        const text = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Prompt copied to clipboard!");
+        });
+    }
+</script>
+        
     </div>
 
 </body>
