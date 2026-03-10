@@ -1,0 +1,71 @@
+/* style.css */
+:root {
+    --bg-color: #000000;
+    --emerald: #50C878;
+    --emerald-dim: rgba(80, 200, 120, 0.1);
+    --border-style: 1px solid #50C878;
+    --font-stack: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --radius-main: 10px;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--emerald);
+    font-family: var(--font-stack);
+    margin: 0;
+    padding-top: 80px;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    border-bottom: var(--border-style);
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    z-index: 1000;
+}
+
+.nav-link {
+    color: var(--emerald);
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+}
+
+.nav-link:hover { opacity: 0.7; }
+
+/* Dashboard Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    border: var(--border-style);
+    padding: 25px;
+    border-radius: var(--radius-main);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    background-color: var(--emerald-dim);
+    box-shadow: 0 4px 15px rgba(80, 200, 120, 0.2);
+}
+
+h1, h2 { text-align: center; text-transform: uppercase; letter-spacing: 2px; }
+ul { list-style-type: none; padding: 0; }
+li { margin: 15px 0; text-align: center; }
+a { color: var(--emerald); text-decoration: none; }
+a:hover { text-decoration: underline; }
