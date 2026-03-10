@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research Docking Station</title>
@@ -9,10 +8,9 @@
         :root {
             --bg-color: #000000;
             --emerald: #50C878;
+            --emerald-dim: rgba(80, 200, 120, 0.1);
             --border-style: 1px solid #50C878;
             --font-stack: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            
-            /* ADDED: Global Rounding Variable */
             --radius-main: 10px;
         }
 
@@ -21,13 +19,42 @@
             color: var(--emerald);
             font-family: var(--font-stack);
             margin: 0;
-            padding: 40px;
+            padding-top: 80px; /* Space for the fixed nav */
         }
 
+        /* --- Navigation Bar --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--bg-color);
+            border-bottom: var(--border-style);
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            z-index: 1000;
+        }
+
+        .nav-link {
+            color: var(--emerald);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover {
+            opacity: 0.7;
+        }
+
+        /* --- Header & Layout --- */
         header {
             text-align: center;
             margin-bottom: 50px;
-            border-bottom: 2px solid var(--emerald);
+            padding: 0 20px;
         }
 
         .dashboard-grid {
@@ -36,28 +63,20 @@
             gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
         }
 
+        /* --- Cards --- */
         .card {
             border: var(--border-style);
-            padding: 20px;
-            
-            /* ADDED: Applies the rounded corner */
+            padding: 25px;
             border-radius: var(--radius-main);
-            
-            /* Transitions for the hover effect below */
             transition: all 0.3s ease;
         }
 
         .card:hover {
-            /* Modified hover effect for rounded corners */
-            background-color: rgba(80, 200, 120, 0.05);
-            
-            /* Subtle shadow to complement the rounding */
+            background-color: var(--emerald-dim);
             box-shadow: 0 4px 15px rgba(80, 200, 120, 0.2);
-            
-            /* Optional: Make the corner rounding slightly stronger on hover */
-            border-radius: calc(var(--radius-main) * 1.5);
         }
 
         .card h2 {
@@ -65,6 +84,8 @@
             text-transform: uppercase;
             font-size: 1.1rem;
             letter-spacing: 2px;
+            border-bottom: 1px solid var(--emerald-dim);
+            padding-bottom: 10px;
         }
 
         ul {
@@ -73,21 +94,27 @@
         }
 
         li {
-            margin: 12px 0;
+            margin: 15px 0;
         }
 
-        a {
+        .card a {
             color: var(--emerald);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
         }
 
-        a:hover {
+        .card a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
+
+    <nav>
+        <a href="admin.html" class="nav-link">University Admin</a>
+        <a href="research.html" class="nav-link">Research Hub</a>
+        <a href="ai-workflows.html" class="nav-link">AI Workflows</a>
+    </nav>
 
     <header>
         <h1>DOCKING STATION :: RESEARCH MANAGEMENT</h1>
@@ -97,27 +124,24 @@
         <div class="card">
             <h2>University Admin</h2>
             <ul>
-                <li><a href="#">Microsoft Teams</a></li>
-                <li><a href="#">SharePoint Directory</a></li>
-                <li><a href="#">Project Timelines (Excel)</a></li>
+                <li><a href="admin.html">Manage Project Timelines</a></li>
+                <li><a href="admin.html">Compliance & Law (LL.M)</a></li>
             </ul>
         </div>
 
         <div class="card">
             <h2>Research Hub</h2>
             <ul>
-                <li><a href="#">NotebookLM Sources</a></li>
-                <li><a href="#">Law (LL.M) Archive</a></li>
-                <li><a href="#">International Relations Data</a></li>
+                <li><a href="research.html">Literature Review</a></li>
+                <li><a href="research.html">Intl. Relations Data</a></li>
             </ul>
         </div>
 
         <div class="card">
             <h2>AI Workflows</h2>
             <ul>
-                <li><a href="#">Gemini Advanced</a></li>
-                <li><a href="#">Claude Terminal</a></li>
-                <li><a href="#">GitHub Repo Settings</a></li>
+                <li><a href="ai-workflows.html">NotebookLM Prompting</a></li>
+                <li><a href="ai-workflows.html">Copilot/Gemini Sync</a></li>
             </ul>
         </div>
     </div>
